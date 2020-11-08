@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TUGAS IMPLEMENTASI ANTAR MUKA</title>
+		<style type="">
+			.border{border-width: 500px
+					border-height:50px;
+					border-style:solid;
+					border-color: black;
+					margin-left: 500px;
+					margin-right: 500px;
+					margin-bottom: 500px
+					margin-top:590;
+					background-color: orange;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="border">
+			<b><h2 align="center"><font face="Arial black">FORMULIR LOGIN</font></h2></b>
+		<form name="formTugas" id="tugasku" bg>
+		<!-- USERNAME -->
+			<table>
+				<tr>
+					<td>
+						<label>Username</label>
+					</td>
+					<td>
+						<input type="text" name="username" id="username" placeholder="Username" pattern=".{3,15}" required ><br>
+					</td>
+				</tr>
+			
+		<!-- PASSWORD -->
+			<tr>
+				<td>
+					<label>Password</label>
+				</td>
+				<td>
+					<input type="password" name="password" id="pass" placeholder="Password" pattern="(?=^.{4,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+			oninvalid="this.setCustomValidity('Must contain at least one number and one uppercase and lowercase letter, and at least 4 or more characters')" oninput="this.setCustomValidity('')" required><br>
+				</td>
+			</tr>
+			
+		<!-- RETYPE PASSWORD -->
+
+			<tr>
+				<td>
+					<label>Ulang Password</label>
+				</td>
+				<td>
+					<input type="password" name="repeat" id="repeat" placeholder="Ulangi Password" required><br>
+				</td>
+			</tr>
+			
+			
+		<!-- EMAIL -->
+		<tr>
+			<td>
+				<label>Email</label>
+			</td>
+			<td>
+				<input type="text" name="email" id="email" placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+			oninvalid="this.setCustomValidity('Gunakan Format Email')" oninput="this.setCustomValidity('')"required><br>
+			</td>
+		</tr>
+			
+			
+		<!-- NUMBER -->
+		<tr>
+			<td>
+				<label>No.Telpn</label>
+			</td>
+			<td>
+					<input type=”Number” name=”telp” id=”telp” placeholder="Nomor Telepon" pattern=".{10,12}"
+			oninvalid="this.setCustomValidity('Format Nomor harus 10 sampai 12 digit')" oninput="this.setCustomValidity('')" required><br>
+			</td>
+		</tr>
+		
+		
+		<!-- ALAMAT -->
+		<tr>
+			<td>
+				<label>Alamat</label>
+			</td>
+			<td>
+				<textarea id="alamat" style="width: 167px;" placeholder="Alamat " 
+			oninvalid="this.setCustomValidity('Alamat tidak boleh kosong')" oninput="this.setCustomValidity('')" required></textarea><br>
+			<input type="submit" name="" value="Submit" onclick="Validasi()" />
+
+			</td>
+		</tr>
+			
+		</table>
+		</form>
+		
+		<script type="text/javascript">
+			function Validasi(){								
+			//VALIDASI RECONFIRM PASSWORD//
+                var pass2=document.getElementById("pass").value;
+                var pass1=document.getElementById("repeat").value;
+                if(pass1!=pass2)
+                    document.getElementById("repeat").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+                else
+                    document.getElementById("repeat").setCustomValidity('');
+            }
+		
+		</script>
+	</div>
+	</body>
+</html>
